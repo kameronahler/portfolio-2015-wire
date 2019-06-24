@@ -1,0 +1,44 @@
+.mobile-inpage-wrapper{
+	@include flex(center, null);
+	flex-direction:column;
+	padding: $section-padding;
+	background:$color-text-secondary;
+
+	h2, h3{
+		margin-top:0;
+		margin-bottom:1rem;
+		text-align:center;
+		color:$color-primary;
+	}
+	h2{
+		font-weight:700;
+	}
+
+	nav{
+		@include flex(null,center);
+		flex-direction:column;
+		
+		@include bp(xs){
+			flex-direction:row;
+			justify-content:center;
+		}
+
+		.button{
+			display:inline-block;
+			margin-bottom:1rem;
+			
+			@include bp(xs){
+				margin:0 .5rem;
+			}
+
+			&:last-of-type{
+				margin-bottom:0;
+			}
+		}
+	}
+}
+
+.cta-container{
+	@extend .mobile-inpage-wrapper;
+}
+

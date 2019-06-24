@@ -1,0 +1,39 @@
+.footer-container{
+	background:$color-primary;
+	color:$color-text-secondary;
+	padding:2rem 1rem;
+}
+
+.footer-link-wrapper{
+	@extend %reset-list;
+	@include flex (center, center);
+	flex-wrap:wrap;
+
+	li{
+		display:inline-block;
+		text-align:center;
+		border-right:.125em solid;
+		padding:0 1em;
+
+		&:first-child{
+			padding-left:0;
+		}
+		&:last-child{
+			border:none;
+			padding-right:0;
+		}
+		a{
+			font-weight:700;
+		}
+	}
+}
+
+.footer-copyright-wrapper{
+	margin-top:1em;
+	text-align:center;
+
+	p{
+		margin:0;
+		font-weight:300;
+	}
+}

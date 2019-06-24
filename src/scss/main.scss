@@ -1,0 +1,83 @@
+// vars
+$color-primary:#384a56;
+$color-secondary:#EA9935;
+$color-text-primary:#333;
+$color-text-secondary:#eff4fc;
+$color-jumbotron:#000;
+$color-modal-title-background:linear-gradient(to top right, rgba(darken($color-secondary,35%),.9) 0%, rgba(darken($color-secondary,35%),.8) 100%);
+$navbar-height:4rem;
+$navbar-height-scrolling:3rem;
+$section-padding:3rem 1rem;
+$close-modal-width:4.5rem !global;
+$footer-font-weight:300;
+$trans-timing:.15s;
+$trans-easing:ease-out;
+
+/* z-index
+Navbar --> 99
+Modal blocker --> 100
+*/
+
+// extends
+%reset-button{
+  border:none;
+  &:focus{
+    outline:1px dotted white;
+    outline-offset:-2px
+  }
+  &:active{
+    outline:none;
+    transition:0;
+  }
+}
+
+%reset-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+// mixins
+@mixin bp($bp){
+  @if $bp == xs{@media screen and (min-width:30em){@content}}
+  @else if $bp == max-xs{@media screen and (max-width:29.99em){@content}}
+  @else if $bp == sm{@media screen and (min-width:48em){@content}}
+  @else if $bp == max-sm{@media screen and (max-width:47.99em){@content}}
+  @else if $bp == md{@media screen and (min-width:62em){@content}}
+  @else if $bp == max-md{@media screen and (max-width:61.99em){@content}}
+  @else if $bp == lg{@media screen and (min-width:75em){@content}}
+  @else if $bp == max-lg{@media screen and (max-width:74.99em){@content}}
+}
+
+@mixin flex($justify-content:null,$align-items:null){
+  display:flex;
+  justify-content:$justify-content;
+  align-items:$align-items;
+}
+
+@mixin absolute($top:null,$left:null,$right:null,$bottom:null){
+  position:absolute;
+  top:$top;
+  left:$left;
+  right:$right;
+  bottom:$bottom;
+}
+
+
+
+/* Base */
+@import "partials/normalize/normalize";
+@import "partials/vertical-rhythm/vertical-rhythm";
+@import "partials/base";
+@import "partials/jquery-modal/jquery-modal";
+@import "partials/icomoon/icomoon";
+
+/* Modules */
+@import "partials/navbar";
+@import "partials/jumbotron";
+@import "partials/cta-mobile-inpage";
+@import "partials/modal-thumbnails";
+@import "partials/footer";
+
+/* Boilerplate Print Styles - LAST */
+@import "partials/boilerplate/print";

@@ -1,0 +1,94 @@
+// resets
+html{
+  font-size:100%;
+  font-family:"franklin-gothic-urw", Helvetica Neue, Arial, sans-serif;
+  box-sizing:border-box;
+
+  & *,
+  & *:before,
+  & *:after{
+    box-sizing:inherit;
+  }
+
+  @include bp(md){
+    font-size:112.5%;
+  }
+}
+
+body{
+  font-size:1em;
+  background:#eff4fc;
+  &.js-active-overflow{
+    overflow:hidden;
+  }
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+  
+  &:hover{
+    text-decoration:none;
+  }
+}
+
+a,
+button{
+  &:focus{
+    outline:1px dotted white;
+    outline-offset:-2px
+  }
+  &:active{
+    outline:none;
+    transition:0;
+  }
+}
+
+// global
+.container-main{
+  width:100%;
+  height:100%;
+  margin:0 auto;
+
+  @include bp(lg){
+    max-width:1200px;
+    box-shadow:0 0 2rem rgba(0,0,0,.125);
+  }
+}
+.button{
+  padding:.5rem 1rem;
+  font-size:1.25rem;
+  font-weight:300;
+  letter-spacing:.25rem;
+  text-align:center;
+  text-transform:uppercase;
+  background:$color-secondary;
+  color:#fff;
+  transition:$trans-timing $trans-easing;
+
+  &:hover{
+    background:darken($color-secondary,7.5%);
+    cursor:pointer;
+    transform:scale(1.1);
+  }
+
+  &:active{
+    background:$color-secondary;
+    transition:0;
+  }
+}
+
+.section-header{
+  background:$color-primary;
+  margin:0;
+  font-weight:700;
+  padding: $section-padding;
+  text-align:center;
+  color:$color-text-secondary;
+}
+
+.sm-only{
+  @include bp(sm){
+    display:none;
+  }
+}
